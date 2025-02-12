@@ -5,6 +5,19 @@
     <!-- Zone de travail pour l'exercice -->
     <div class="exe-zone">
       <h2>Zone d'exercice</h2>
+
+      <para-style @salut="coucou" color="red">
+        <template v-slot:default>
+          Coucou
+        </template>
+
+        <template v-slot:footer>
+          <p>Je suis le footer</p>
+        </template>
+      </para-style>
+
+
+
       <v-btn @click="tasks = []">Effacer les tâches</v-btn>
       <v-card
         class="mx-auto my-6 pa-2"
@@ -55,6 +68,7 @@
 import ExerciceObjectifs from "@/components/ExerciceObjectifs.vue";
 // Importation de la fonction réactive ref
 import {computed, ref, watch} from 'vue';
+import ParaStyle from "@/components/ParaStyle.vue";
 
 // Tableau réactif de tâches
 const tasks = ref([
@@ -82,6 +96,10 @@ const sortTasks = computed(function () {
   // Créer un nouveau tableau trié par date de création
   return [...tasks.value].sort((a, b) => b.date - a.date)
 })
+
+function coucou (prenom) {
+  alert('coucou ' + prenom)
+}
 
 /**
  * Fonction qui ajoute une nouvelle tâche à la liste.
