@@ -24,8 +24,16 @@
 <script setup>
 // Importation des données de l'exercice
 import ExerciceObjectifs from "@/components/ExerciceObjectifs.vue";
-
-
+// Importer les méthodes de vue
+import {onMounted, onUnmounted} from "vue";
+// Juste avant le montage du composant
+onMounted(() => {
+  alert('Composant monté avec succès !');
+})
+// Juste avant le démontage du composant
+onUnmounted(() => {
+  alert('Composant démonté avec succès !');
+})
 
 </script>
 

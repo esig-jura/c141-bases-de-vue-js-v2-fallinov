@@ -6,7 +6,7 @@ const props = defineProps({
   texte: String,
   color: String
 })
-// Déclaration des événement émis
+// Déclaration des événements émis
 const emit = defineEmits(['salut'])
 
 </script>
