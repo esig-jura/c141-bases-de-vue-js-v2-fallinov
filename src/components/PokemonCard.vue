@@ -15,21 +15,21 @@
 </template>
 
 <script setup>
-// Création de la propriété pokeNom
-defineProps({
+// Définition des propriétés du composant
+const props = defineProps({
   pokeNom: {
     type: String,
     required: true,
   },
 })
 
-// Déclaration de l'événement delete
+// Définition des événements du composant
 const emit = defineEmits(['delete'])
 
 // Fonction qui émet l'événement delete
 function deletePokemon () {
   // Si l'utilisateur confirme la suppression
-  if(confirm('Voulez-vous vraiment supprimer ce Pokémon ?')) {
+  if(confirm(`Voulez-vous vraiment supprimer ${ props.pokeNom } ?`)) {
     // Émission de l'événement delete
     emit('delete')
   }

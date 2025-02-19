@@ -13,10 +13,10 @@
           <v-list>
             <!-- Element à transformer en composant -->
             <pokemon-card
-              v-for="pokeball in pokemons"
+              v-for="(pokeball, index) in pokemons"
               :key="pokeball"
               :poke-nom="pokeball"
-              @delete="removePokemon(0)"
+              @delete="removePokemon(index)"
             />
             <!-- Fin de l'élément à transformer en composant -->
           </v-list>
@@ -35,7 +35,7 @@ import PokemonCard from "@/components/PokemonCard.vue";
 const pokemons = ref(["Pikachu", "Bulbizarre", "Salamèche", "Carapuce", "Rondoudou"]);
 
 // Supprimer un Pokémon de la liste
-const removePokemon = (index) => {
+function removePokemon (index) {
   pokemons.value.splice(index, 1);
-};
+}
 </script>
