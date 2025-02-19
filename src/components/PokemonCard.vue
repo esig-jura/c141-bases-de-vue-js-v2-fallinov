@@ -1,10 +1,10 @@
+<template>
+  <p>Coucou</p>
+</template>
+
 <script setup>
 
 </script>
-
-<template>
-
-</template>
 
 <style scoped lang="sass">
 
