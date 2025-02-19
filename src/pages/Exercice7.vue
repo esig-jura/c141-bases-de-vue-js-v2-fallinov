@@ -26,11 +26,11 @@
 import ExerciceObjectifs from "@/components/ExerciceObjectifs.vue";
 // Importer les méthodes de vue
 import {onMounted, onUnmounted} from "vue";
-// Juste avant le montage du composant
+// onMounted est appelé juste avant le montage du composant
 onMounted(() => {
   alert('Composant monté avec succès !');
 })
-// Juste avant le démontage du composant
+// onUnmounted est appelé juste avant le démontage du composant
 onUnmounted(() => {
   alert('Composant démonté avec succès !');
 })
